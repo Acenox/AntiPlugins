@@ -75,8 +75,8 @@ plugins.use (Cette permission permet à un utilisateur non opérateur de voir vo
 # Téléchargement
 
 
-FR: https://www.spigotmc.org/resources/antiplugins-ne-pas-voir-vos-plugins-worldedit-protection-fr-1-7-1-13-2.20269/
-EN: https://www.spigotmc.org/resources/antiplugins-do-not-see-your-plugins-worldedit-protection-en-1-7-1-13-2.20266/
+- FR: https://www.spigotmc.org/resources/antiplugins-ne-pas-voir-vos-plugins-worldedit-protection-fr-1-7-1-13-2.20269/
+- EN: https://www.spigotmc.org/resources/antiplugins-do-not-see-your-plugins-worldedit-protection-en-1-7-1-13-2.20266/
 
 Merci de signaler les bugs / fautes , une mise à jour sera rapidement disponible pour corriger les problèmes que vous rencontrez !
 Je vous remercie d'utiliser AntiPluginsV4 !
