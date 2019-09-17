@@ -30,13 +30,13 @@ command /antipl [<text>] [<text>]:
 		else if arg-1 is "es":
 			set {antipl.lang} to "es"
 			clear {antipl.config}
-			message "{@prefix} &ecambio de idioma: &6ES"
+			message "{@prefix} &eCambio de idioma: &6ES"
 			make console execute command "/sk reload %script%"
 			make console execute command "/antipl"
 		else if arg-1 is "en":
 			set {antipl.lang} to "en"
 			clear {antipl.config}
-			message "{@prefix} &eChange language to: &6EN"
+			message "{@prefix} &eLanguage change to: &6EN"
 			make console execute command "/sk reload %script%"
 			make console execute command "/antipl"
 		else if arg-1 is "ger":
@@ -48,7 +48,7 @@ command /antipl [<text>] [<text>]:
 		else if arg-1 is "it":
 			clear {antipl.config}
 			set {antipl.lang} to "it"
-			message "{@prefix} &eCambia lingua in: &6IT"
+			message "{@prefix} &eCambiamento di lingua in: &6IT"
 			make console execute command "/sk reload %script%"
 			make console execute command "/antipl"
 		else if arg-1 is "title":
@@ -188,8 +188,8 @@ on load:
 
 function nopermmsg(p: player):
 	{_p} doesn't have permission "plugins.use"
-	send player title "&4%{antipl.message}%" with subtitle "&4%{antipl.msg}%" for 4 seconds
-	set action bar of player to "&c%{antipl.permission}%"
+	send {_p} title "&4%{antipl.message}%" with subtitle "&4%{antipl.msg}%" for 4 seconds
+	set action bar of {_p} to "&c%{antipl.permission}%"
 
 on command:
 	if command is "pl", "plugins", "plugin", "bukkit:help", "bukkit:pl", "bukkit:?", "help", "?", "ver", "version", "bukkit:plugin", "bukkit:plugins", "bukkit:me", "minecraft:me", "bukkit:ver", "bukkit:version", "bukkit:?", "about", "icanhasbukkit", "bukkit:about" or "about":
