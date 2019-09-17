@@ -53,7 +53,7 @@ command /antipl [<text>] [<text>]:
 			make console execute command "/antipl"
 		else if arg-1 is "title":
 			if arg-2 is set:
-				set {antipl.permission} to arg-2
+				set {antipl.message} to arg-2
 				if {antipl.lang} is "fr":
 					message "{@prefix} &eVous venez de définir le title en : &6%arg-2%"
 				if {antipl.lang} is "en":
