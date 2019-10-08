@@ -1,22 +1,22 @@
-﻿#Skript par Acenox
-#Vous avez le droit de modifier ou de réutiliser le code, merci de me citer si vous rendez public un de mes codes.
-#Skript by Acenox
-#You have the right to modify or reuse the code, please quote me if you make public one of my codes.
-#Skript por Acenox
-#Usted tiene el derecho de modificar o reutilizar el código, gracias a citarme si vas pública cualquiera de mi código.
-#Skript Von Acenox
-#Sie haben das Recht, den Code zu ändern oder wieder verwenden, danke mich zu zitieren, wenn Sie eines meiner Code die Öffentlichkeit gehen.
-#Skript Con Acenox
-#Lei ha il diritto di modificare o riutilizzare il codice, grazie a citarmi se si va pubblico qualsiasi del mio codice.
+# Skript par Acenox
+# Vous avez le droit de modifier ou de réutiliser le code, merci de me citer si vous rendez public un de mes codes.
+# Skript by Acenox
+# You have the right to modify or reuse the code, please quote me if you make public one of my codes.
+# Skript por Acenox
+# Usted tiene el derecho de modificar o reutilizar el código, gracias a citarme si vas pública cualquiera de mi código.
+# Skript Von Acenox
+# Sie haben das Recht, den Code zu ändern oder wieder verwenden, danke mich zu zitieren, wenn Sie eines meiner Code die Öffentlichkeit gehen.
+# Skript Con Acenox
+# Lei ha il diritto di modificare o riutilizzare il codice, grazie a citarmi se si va pubblico qualsiasi del mio codice.
 
-#Addon:
-#- SkRayfall
+# Addon:
+# - SkRayfall
 
-#Build 7 (17/03/2019) - 1.13 update !
+# Build 7 (17/03/2019) - 1.13 update !
 
 options:
 	prefix: &6AntiPlugins &8»&e
-	
+
 command /antipl [<text>] [<text>]:
 	permission: admin.use
 	permission message: {@prefix} &4Vous n'avez pas la permission.
@@ -27,94 +27,93 @@ command /antipl [<text>] [<text>]:
 			message "{@prefix} &eChangement de langue vers: &6FR"
 			make console execute command "/sk reload %script%"
 			make console execute command "/antipl"
-		if arg-1 is "es":
+		else if arg-1 is "es":
 			set {antipl.lang} to "es"
 			clear {antipl.config}
-			message "{@prefix} &ecambio de idioma: &6ES"
+			message "{@prefix} &eCambio de idioma: &6ES"
 			make console execute command "/sk reload %script%"
 			make console execute command "/antipl"
-		if arg-1 is "en":
+		else if arg-1 is "en":
 			set {antipl.lang} to "en"
 			clear {antipl.config}
-			message "{@prefix} &eChange language to: &6EN"
+			message "{@prefix} &eLanguage change to: &6EN"
 			make console execute command "/sk reload %script%"
 			make console execute command "/antipl"
-		if arg-1 is "ger":
+		else if arg-1 is "ger":
 			clear {antipl.config}
 			set {antipl.lang} to "ger"
 			message "{@prefix} &eSprachwechsel zu: &6GER"
 			make console execute command "/sk reload %script%"
 			make console execute command "/antipl"
-		if arg-1 is "it":
+		else if arg-1 is "it":
 			clear {antipl.config}
 			set {antipl.lang} to "it"
-			message "{@prefix} &eCambia lingua in: &6IT"
+			message "{@prefix} &eCambiamento di lingua in: &6IT"
 			make console execute command "/sk reload %script%"
 			make console execute command "/antipl"
-		if arg-1 is "title":
+		else if arg-1 is "title":
 			if arg-2 is set:
 				set {antipl.message} to arg-2
 				if {antipl.lang} is "fr":
 					message "{@prefix} &eVous venez de définir le title en : &6%arg-2%"
-				else if {antipl.lang} is "en":
-					message "{@prefix} &eYou have defined the title in: &6%arg-2%"
-				else if {antipl.lang} is "es":
+				if {antipl.lang} is "en":
+					message "{@prefix} &eYou have defined the title in : &6%arg-2%"
+				if {antipl.lang} is "es":
 					message "{@prefix} &eHas definido el título en : &6%arg-2%"
-				else if {antipl.lang} is "ger":
+				if {antipl.lang} is "ger":
 					message "{@prefix} &eSie haben den Titel in definiert : &6%arg-2%"
-				else if {antipl.lang} is "it":
+				if {antipl.lang} is "it":
 					message "{@prefix} &eHai definito il titolo in : &6%arg-2%"
 			else:
 				message "{@prefix} &6/antipl title <text>"
-		if arg-1 is "subtitle":
+		else if arg-1 is "subtitle":
 			if arg-2 is set:
 				set {antipl.msg} to arg-2
 				if {antipl.lang} is "fr":
 					message "{@prefix} &eVous venez de définir le subtitle en : &6%arg-2%"
-				else if {antipl.lang} is "en":
+				if {antipl.lang} is "en":
 					message "{@prefix} &eYou have defined the subtitle in : &6%arg-2%"
-				else if {antipl.lang} is "es":
+				if {antipl.lang} is "es":
 					message "{@prefix} &eAcabas de definir el subtítulo en : &6%arg-2%"
-				else if {antipl.lang} is "ger":
+				if {antipl.lang} is "ger":
 					message "{@prefix} &eSie haben gerade den Untertitel in definiert : &6%arg-2%"
-				else if {antipl.lang} is "it":
+				if {antipl.lang} is "it":
 					message "{@prefix} &eHai appena definito il sottotitolo in : &6%arg-2%"
 			else:
 				message "{@prefix} &6/antipl subtitle <text>"
-		if arg-1 is "actionbar":
+		else if arg-1 is "actionbar":
 			if arg-2 is set:
 				set {antipl.permission} to arg-2
 				if {antipl.lang} is "fr":
 					message "{@prefix} &eVous venez de définir l'action bar en : &6%arg-2%"
-				else if {antipl.lang} is "en":
+				if {antipl.lang} is "en":
 					message "{@prefix} &eYou have defined the actionbar in : &6%arg-2%"
-				else if {antipl.lang} is "es":
+				if {antipl.lang} is "es":
 					message "{@prefix} &eHas definido la barra de acción en : &6%arg-2%"
-				else if {antipl.lang} is "ger":
+				if {antipl.lang} is "ger":
 					message "{@prefix} &eSie haben die Aktionsleiste in definiert : &6%arg-2%"
-				else if {antipl.lang} is "it":
+				if {antipl.lang} is "it":
 					message "{@prefix} &eHai definito la barra delle azioni in : &6%arg-2%"
 			else:
 				message "{@prefix} &6/antipl actionbar <text>"
-		if arg-1 is "weprotection":
-			if arg-2 is "true" or "oui" or "yes" or "si" or "ja" or "false" or "non" or "no" or "nicht":
-				if arg-2 is "true" or "oui" or "yes" or "si" or "ja":
-					set {antipl.we} to true
-				if arg-2 is "false" or "non" or "no" or "nicht":
-					set {antipl.we} to false
+		else if arg-1 is "weprotection":
+			set {_b} to arg-2 parsed as boolean
+			{_b} is a boolean:
+				set {antipl.we} to {_b} if {_b} is true
+				set {_c} to {antipl.we} ? false
 				if {antipl.lang} is "fr":
-					message "{@prefix} &eVous venez de définir le WorldEdit Protection sur : &6%arg-2%"
-				else if {antipl.lang} is "en":
-					message "{@prefix} &eYou have just set the WorldEdit Protection on : &6%arg-2%"
-				else if {antipl.lang} is "es":
-					message "{@prefix} &eAcaba de configurar la protección WorldEdit en: &6%arg-2%"
-				else if {antipl.lang} is "ger":
-					message "{@prefix} &eSie haben gerade den WorldEdit-Schutz aktiviert : &6%arg-2%"
-				else if {antipl.lang} is "it":
-					message "{@prefix} &eHai appena impostato la protezione WorldEdit : &6%arg-2%"
+					message "{@prefix} &eVous venez de définir le WorldEdit Protection sur : &6%{_c}%"
+				if {antipl.lang} is "en":
+					message "{@prefix} &eYou have just set the WorldEdit Protection on : &6%{_c}%"
+				if {antipl.lang} is "es":
+					message "{@prefix} &eAcaba de configurar la protección WorldEdit en : &6%{_c}%"
+				if {antipl.lang} is "ger":
+					message "{@prefix} &eSie haben gerade den WorldEdit-Schutz aktiviert : &6%{_c}%"
+				if {antipl.lang} is "it":
+					message "{@prefix} &eHai appena impostato la protezione WorldEdit : &6%{_c}%"
 			else:
 				message "{@prefix} &6/antipl weprotection <true/false>"
-		if arg-1 is not set:
+		else:
 			message "&e--- {@prefix} &e---"
 			message "&eSi vous êtes français, merci de faire &6/antipl fr"
 			message "&eIf you are English, please do &6/antipl en"
@@ -147,9 +146,10 @@ command /antipl [<text>] [<text>]:
 				message "&eConfigura la barra delle azioni &6/antipl actionbar <messaggio>"
 				message "&eAbilita / Disabilita la protezione di WorldEdit &6/antipl weprotection <si/non>"
 			message "&e--- {@prefix} &e---"
+
 on load:
 	if {antipl.config} is not set:
-		set {antipl.config} to 1
+		set {antipl.config} to true
 		if {antipl.lang} is not set:
 			set {antipl.lang} to "fr"
 			if {antipl.lang} is "fr":
@@ -160,109 +160,79 @@ on load:
 				set {antipl.we} to false
 				send "&aTerminé !" to console
 			if {antipl.lang} is "en":
-				send "&eConfiguring the Skript AntiPlugins..." to console
+				send "&eConfiguring the AntiPlugins Script..." to console
 				set {antipl.message} to "Command prohibited"
 				set {antipl.permission} to "You do not have permission."
-				set {antipl.msg} to "Sorry" 
-				set {antipl.we} to false
+				set {antipl.msg} to "Sorry"
 				send "&aCompleted !" to console
 			if {antipl.lang} is "es":
 				send "&eConfigurando los Skript AntiPlugins..." to console
 				set {antipl.message} to "La orden esta prohibida"
 				set {antipl.permission} to "No tienes permiso."
-				set {antipl.msg} to "Lo siento" 
-				set {antipl.we} to false
+				set {antipl.msg} to "Lo siento"
 				send "&aTerminado !" to console
 			if {antipl.lang} is "ger":
 				send "&eKonfigurieren der Skript AntiPlugins..." to console
 				set {antipl.message} to "Verbotene Reihenfolge"
 				set {antipl.permission} to "Du hast keine Erlaubnis."
-				set {antipl.msg} to "Entschuldigung" 
-				set {antipl.we} to false
+				set {antipl.msg} to "Entschuldigung"
 				send "&aFertig !" to console
 			if {antipl.lang} is "it":
-				send "&eConfigurazione degli AntiPlugin degli Skript..." to console
+				send "&eConfigurazione dello Skript AntiPlugins..." to console
 				set {antipl.message} to "Ordine vietato"
 				set {antipl.permission} to "Non hai il permesso."
-				set {antipl.msg} to "scusate" 
-				set {antipl.we} to false
+				set {antipl.msg} to "Scusate"
 				send "&aFinito !" to console
-
 
 # PL
 
+function nopermmsg(p: player):
+	{_p} doesn't have permission "plugins.use"
+	send {_p} title "&4%{antipl.message}%" with subtitle "&4%{antipl.msg}%" for 4 seconds
+	set action bar of {_p} to "&c%{antipl.permission}%"
+
 on command:
-	if command is "pl" or "plugins" or "plugin" or "bukkit:help" or "bukkit:pl" or "bukkit:?" or "help" or "?" or "ver" or "version" or "bukkit:plugin" or "bukkit:plugins" or "bukkit:me" or "minecraft:me" or "bukkit:ver" or "bukkit:version" or "bukkit:?" or "about" or "icanhasbukkit" or "bukkit:about" or "about":
-		if player doesn't have permission "plugins.use":
-			send player title "&4%{antipl.message}%" with subtitle "&4%{antipl.msg}%" for 4 seconds
-			set action bar of player to "&c%{antipl.permission}%" 
-			cancel event		
-	if command is "/calc" or "calculate" or "worldedit:/calc" or "worldedit:calculate" or "worldedit:/solve" or "worldedit:/eval" or "worldedit:/evaluate" or "/eval" or "evaluate" or "solve":
-		if {antipl.we} is "true":
-			if player doesn't have permission "plugins.use":
-				send player title "&4%{antipl.message}%" with subtitle "&4%{antipl.msg}%" for 4 seconds
-				set action bar of player to "&c%{antipl.permission}%" 
-				cancel event			
-		else:
-			stop		
-			
+	if command is "pl", "plugins", "plugin", "bukkit:help", "bukkit:pl", "bukkit:?", "help", "?", "ver", "version", "bukkit:plugin", "bukkit:plugins", "bukkit:me", "minecraft:me", "bukkit:ver", "bukkit:version", "bukkit:?", "about", "icanhasbukkit", "bukkit:about" or "about":
+		nopermmsg(player)
+	if command is "/calc", "calculate", "worldedit:/calc", "worldedit:calculate", "worldedit:/solve", "worldedit:/eval", "worldedit:/evaluate", "/eval", "evaluate" or "solve":
+		nopermmsg(player) if {antipl.we} is true
+
 command /bukkit:help [<text>]:
 	trigger:
-		if player doesn't have permission "plugins.use":
-			send player title "&4%{antipl.message}%" with subtitle "&4%{antipl.msg}%" for 4 seconds
-			set action bar of player to "&c%{antipl.permission}%" 
-			stop	
+		nopermmsg(player)
+
 command /bukkit:? [<text>]:
 	trigger:
-		if player doesn't have permission "plugins.use":
-			send player title "&4%{antipl.message}%" with subtitle "&4%{antipl.msg}%" for 4 seconds
-			set action bar of player to "&c%{antipl.permission}%" 
-			stop		
+		nopermmsg(player)
+		
 command /help [<text>]:
 	trigger:
-		if player doesn't have permission "plugins.use":
-			send player title "&4%{antipl.message}%" with subtitle "&4%{antipl.msg}%" for 4 seconds
-			set action bar of player to "&c%{antipl.permission}%" 
-			stop		
+		nopermmsg(player)
+
 command /? [<text>]:
 	trigger:
-		if player doesn't have permission "plugins.use":
-			send player title "&4%{antipl.message}%" with subtitle "&4%{antipl.msg}%" for 4 seconds
-			set action bar of player to "&c%{antipl.permission}%" 
-			stop	
+		nopermmsg(player)
+
 command /ver [<text>]:
 	trigger:
-		if player doesn't have permission "plugins.use":
-			send player title "&4%{antipl.message}%" with subtitle "&4%{antipl.msg}%" for 4 seconds
-			set action bar of player to "&c%{antipl.permission}%" 
-			stop	
+		nopermmsg(player)
+	
 command /version [<text>]:
 	trigger:
-		if player doesn't have permission "plugins.use":
-			send player title "&4%{antipl.message}%" with subtitle "&4%{antipl.msg}%" for 4 seconds
-			set action bar of player to "&c%{antipl.permission}%" 
-			stop	
+		nopermmsg(player)
+	
 command /bukkit:ver [<text>]:
 	trigger:
-		if player doesn't have permission "plugins.use":
-			send player title "&4%{antipl.message}%" with subtitle "&4%{antipl.msg}%" for 4 seconds
-			set action bar of player to "&c%{antipl.permission}%" 
-			stop	
+		nopermmsg(player)
+	
 command /bukkit:version [<text>]:
 	trigger:
-		if player doesn't have permission "plugins.use":
-			send player title "&4%{antipl.message}%" with subtitle "&4%{antipl.msg}%" for 4 seconds
-			set action bar of player to "&c%{antipl.permission}%" 
-			stop	
+		nopermmsg(player)
+
 command /bukkit:about [<text>]:
 	trigger:
-		if player doesn't have permission "plugins.use":
-			send player title "&4%{antipl.message}%" with subtitle "&4%{antipl.msg}%" for 4 seconds
-			set action bar of player to "&c%{antipl.permission}%" 
-			stop	
+		nopermmsg(player)
+
 command /about [<text>]:
 	trigger:
-		if player doesn't have permission "plugins.use":
-			send player title "&4%{antipl.message}%" with subtitle "&4%{antipl.msg}%" for 4 seconds
-			set action bar of player to "&c%{antipl.permission}%" 
-			stop	
+		nopermmsg(player)
