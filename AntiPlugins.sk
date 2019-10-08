@@ -12,7 +12,7 @@
 # Addon:
 # - SkRayfall
 
-# Build 7 (17/03/2019) - 1.13 update !
+# Build 8 (08/10/2019) - 1.14 update and Code cleanup by @Matocolotoe !
 
 options:
 	prefix: &6AntiPlugins &8»&e
